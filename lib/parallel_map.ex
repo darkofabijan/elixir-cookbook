@@ -1,4 +1,4 @@
-defmodule Parallel do
+defmodule ParallelMap do
 
   def pmap(collection, fun) do
     me = self
