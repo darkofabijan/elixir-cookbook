@@ -19,16 +19,19 @@ defmodule Schizo do
   end
 
   defp uppercase_transformation({word, index}) do
-    cond do
-      rem(index, 2) == 0 -> word
-      rem(index, 2) == 1 -> String.upcase(word)
-    end
+    every_other_word({word, index}, &String.upcase/1)
   end
 
   defp vowels_transformation({word, index}) do
+    func = fn (word) -> Regex.replace(%r/[aeiou]/, word, "") end
+
+    every_other_word({word, index}, func)
+  end
+
+  defp every_other_word({word, index}, function) do
     cond do
       rem(index, 2) == 0 -> word
-      rem(index, 2) == 1 -> Regex.replace(%r/[aeiou]/, word, "")
+      rem(index, 2) == 1 -> function.(word)
     end
   end
 
