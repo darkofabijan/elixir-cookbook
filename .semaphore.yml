@@ -19,11 +19,11 @@ blocks:
 
   - name: "Stage 2 🧝‍♀️"
     build:
-    jobs:
-      - name: Job from 1st block
-        commands:
-          - echo $SEMAPHORE_PIPELINE_ID
-          - echo "Firsdt job 1"
-          - echo "First job 2"
-          - echo "First job 3"
+      jobs:
+        - name: Job from 1st block
+          commands:
+            - echo $SEMAPHORE_PIPELINE_ID
+            - echo "Firsdt job 1"
+            - echo "First job 2"
+            - echo "First job 3"
 
