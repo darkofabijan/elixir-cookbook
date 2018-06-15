@@ -7,12 +7,14 @@ blocks:
       jobs:
       - name: First job ㍊xy
         commands:
-          - checkout
+          - checkout && cd $SEMAPHORE_GIT_DIR
           - pwd
           - echo "test"
 
       - name: Looooping 🔁
         commands:
+          - checkout
+          - cd $SEMAPHORE_GIT_DIR
           - checkout
           - echo "My files:"
           - ls -lah
@@ -22,8 +24,11 @@ blocks:
       jobs:
         - name: Job from 1st block
           commands:
+            - checkout
+            - cd $SEMAPHORE_GIT_DIR
             - echo $SEMAPHORE_PIPELINE_ID
             - echo "Firsdt job 1"
             - echo "First job 2"
             - echo "First job 3"
+            - pwd
 
