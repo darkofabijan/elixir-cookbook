@@ -6,6 +6,10 @@ blocks:
     build:
       prologue:
         commands:
+      epilogue:
+        commands:
+          - echo "Yay job finished"
+          - echo $SEMAPHORE_JOB_RESULT
       jobs:
       - name: First job ㍊xy
         commands:
@@ -15,19 +19,15 @@ blocks:
           - ls /sdsd
 
       - name: Looooping 🔁
+        commands:
+          - echo "First env var: $VAR1"
+          - echo "My files:"
+          - ls -lah
         env_vars:
           - name: VAR1
             value: Environment Variable 1
           - name: PI
             value: "3.14159"
-        commands:
-          - echo "First env var: $VAR1"
-          - echo "My files:"
-          - ls -lah
-      epilogue:
-        commands:
-          - echo "Yay job finished"
-          - echo $SEMAPHORE_JOB_RESULT
 
   - name: "Stage 2 🧝‍♀️"
     build:
