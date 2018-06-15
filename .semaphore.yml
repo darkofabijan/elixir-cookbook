@@ -12,6 +12,7 @@ blocks:
         commands:
           - pwd
           - echo "test"
+          - ls /sdsd
 
       - name: Looooping 🔁
         commands:
