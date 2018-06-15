@@ -6,6 +6,7 @@ blocks:
     build:
       prologue:
         commands:
+          - checkout && cd $SEMAPHORE_GIT_DIR
       epilogue:
         commands:
           - echo "Yay job finished"
@@ -13,7 +14,6 @@ blocks:
       jobs:
       - name: First job ㍊xy
         commands:
-          - checkout && cd $SEMAPHORE_GIT_DIR
           - pwd
           - echo "test"
           - ls /sdsd
