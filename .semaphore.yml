@@ -6,16 +6,22 @@ blocks:
     build:
       prologue:
         commands:
-          - checkout && cd $SEMAPHORE_GIT_DIR
       jobs:
       - name: First job ㍊xy
         commands:
+          - checkout && cd $SEMAPHORE_GIT_DIR
           - pwd
           - echo "test"
           - ls /sdsd
 
       - name: Looooping 🔁
+        env_vars:
+          - name: VAR1
+            value: Environment Variable 1
+          - name: PI
+            value: "3.14159"
         commands:
+          - echo "First env var: $VAR1"
           - echo "My files:"
           - ls -lah
       epilogue:
