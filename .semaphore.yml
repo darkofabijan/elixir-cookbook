@@ -17,28 +17,27 @@ blocks:
         - name: PI
           value: "3.14159"
       jobs:
-      - name: First job ㍊xy
+      - name: Just ls
         commands:
           - pwd
           - echo "test"
-          - ls /sdsd
+          - ls /etc
 
-      - name: Looooping 🔁
+      - name: List files
         commands:
           - echo "First env var -> $VAR1"
           - echo "My files:"
           - ls -lah
 
-  - name: "Stage 2 🧝‍♀️"
+  - name: "Stage 2"
     build:
       jobs:
-      - name: Job from 1st block
+      - name: Echo job
         commands:
           - checkout
           - cd $SEMAPHORE_GIT_DIR
-          - echo $SEMAPHORE_PIPELINE_ID
-          - echo "Firsdt job 1"
-          - echo "First job 2"
-          - echo "First job 3"
           - pwd
+          - echo $SEMAPHORE_PIPELINE_ID
+          - echo "Hello from $SEMAPHORE_JOB_ID"
+
 
