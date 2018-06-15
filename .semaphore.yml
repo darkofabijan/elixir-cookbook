@@ -20,7 +20,7 @@ blocks:
 
       - name: Looooping 🔁
         commands:
-          - echo "First env var: $VAR1"
+          - echo "First env var -> $VAR1"
           - echo "My files:"
           - ls -lah
         env_vars:
