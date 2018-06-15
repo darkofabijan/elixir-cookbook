@@ -4,17 +4,17 @@ semaphore_image: standard
 blocks:
   - name: "Stage 1 1️⃣"
     build:
+      prologue:
+        commands:
+          - checkout && cd $SEMAPHORE_GIT_DIR
       jobs:
       - name: First job ㍊xy
         commands:
-          - checkout && cd $SEMAPHORE_GIT_DIR
           - pwd
           - echo "test"
 
       - name: Looooping 🔁
         commands:
-          - checkout
-          - cd elixir-cookbook
           - echo "My files:"
           - ls -lah
 
