@@ -17,6 +17,10 @@ blocks:
         commands:
           - echo "My files:"
           - ls -lah
+      epilogue:
+        commands:
+          - echo "Yay job finished"
+          - echo $SEMAPHORE_JOB_RESULT
 
   - name: "Stage 2 🧝‍♀️"
     build:
