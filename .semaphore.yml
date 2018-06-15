@@ -1,0 +1,29 @@
+version: "v3.0"
+name: My first pipeline
+semaphore_image: standard
+blocks:
+  - name: "Stage 1 1️⃣"
+    build:
+      jobs:
+      - name: First job ㍊xy
+        commands:
+          - checkout
+          - pwd
+          - echo "test"
+
+      - name: Looooping 🔁
+        commands:
+          - checkout
+          - echo "My files:"
+          - ls -lah
+
+  - name: "Stage 2 🧝‍♀️"
+    build:
+    jobs:
+      - name: Job from 1st block
+        commands:
+          - echo $SEMAPHORE_PIPELINE_ID
+          - echo "Firsdt job 1"
+          - echo "First job 2"
+          - echo "First job 3"
+
