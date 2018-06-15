@@ -14,8 +14,7 @@ blocks:
       - name: Looooping 🔁
         commands:
           - checkout
-          - cd $SEMAPHORE_GIT_DIR
-          - checkout
+          - cd elixir-cookbook
           - echo "My files:"
           - ls -lah
 
