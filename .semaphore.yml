@@ -11,6 +11,11 @@ blocks:
         commands:
           - echo "Yay job finished"
           - echo $SEMAPHORE_JOB_RESULT
+      env_vars:
+        - name: VAR1
+          value: Environment Variable 1
+        - name: PI
+          value: "3.14159"
       jobs:
       - name: First job ㍊xy
         commands:
@@ -23,11 +28,6 @@ blocks:
           - echo "First env var -> $VAR1"
           - echo "My files:"
           - ls -lah
-        env_vars:
-          - name: VAR1
-            value: Environment Variable 1
-          - name: PI
-            value: "3.14159"
 
   - name: "Stage 2 🧝‍♀️"
     build:
